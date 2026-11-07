@@ -1,4 +1,5 @@
 <script>
+    import { resolve } from '$app/paths';
     let product = $state("Producto")
     let units = $state(1)
     let meters_pu = $state(80)
@@ -29,7 +30,7 @@
     }
 </script>
 <p>
-    <a href="/">Volver</a>
+    <a href={resolve('/')}>Volver</a>
 </p>
 <form>
     <ul>
