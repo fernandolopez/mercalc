@@ -68,24 +68,22 @@
         <option value="lineal">Por metro</option>
         <option value="volume">Volumen</option>
     </select>
-    <ul>
-        <li>
-            <label for="product">Producto</label>
-            <input id="product" type="text" bind:value={product}/>
-        </li>
-        <li>
-            <label for="units">Unidades</label>
-            <input id="units" type="text" bind:value={units} on:input={calc}/>
-        </li>
-        <li>
-            <label for="unit_amount">{title_case(unit_plural)} por unidad</label>
-            <input id="unit_amount" type="text" bind:value={unit_amount} on:input={calc}/>
-        </li>
-        <li>
-            <label for="price">Precio</label>
-            <input id="price" type="text" bind:value={price} on:input={calc}/>
-        </li>    
-    </ul>
+    <div class="flex flex-row">
+        <label class="basis-1/3 flex-1" for="product">Producto</label>
+        <input class="basis-2/3" id="product" type="text" bind:value={product}/>            
+    </div>
+    <div class="flex flex-row">
+        <label class="basis-1/3 flex-1" for="units">Unidades</label>
+        <input class="basis-2/3" id="units" type="text" bind:value={units} on:input={calc}/>
+    </div>
+    <div class="flex flex-row">
+        <label class="basis-1/3 flex-1" for="unit_amount">{title_case(unit_plural)} por unidad</label>
+        <input class="basis-2/3" id="unit_amount" type="text" bind:value={unit_amount} on:input={calc}/>
+    </div>
+    <div class="flex flex-row">
+        <label class="basis-1/3 flex-1" for="price">Precio</label>
+        <input class="basis-2/3" id="price" type="text" bind:value={price} on:input={calc}/>
+    </div>
 </form>
 <p>Precio por {unit_singular}: {price_pl}</p>
 <button on:click={add}>Agregar</button>
